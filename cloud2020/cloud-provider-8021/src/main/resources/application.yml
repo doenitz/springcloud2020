@@ -1,0 +1,27 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/cloud2020?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+    #表示是否将自己注册进eureka server默认为true
+    register-with-eureka: true
+    #是否从eureka server抓取自己，单点无所谓，集群必须为true
+    fetch-registry: true
+  instance:
+    instance-id: payment8021
+mybatis:
+  type-aliases-package: com.yin.springcloud.entity
+  mapper-locations: classpath:mapper/*.xml
+#logging:
+#  file: D:\\Log\\spring-info.log
+

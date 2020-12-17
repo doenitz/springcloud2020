@@ -1,0 +1,13 @@
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+    #表示是否将自己注册进eureka server默认为true
+    register-with-eureka: true
+    #是否从eureka server抓取自己，单点无所谓，集群必须为true
+    fetch-registry: true
+spring:
+  application:
+    name: cloud-order-service
